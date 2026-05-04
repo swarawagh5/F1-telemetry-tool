@@ -1,1 +1,1 @@
-# F1-telemetry-tool
+# F1 telemetry tool
