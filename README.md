@@ -82,7 +82,6 @@ All plots are saved to `outputs/` automatically:
 ![Telemetry Comparison](outputs/2024_Bahrain_Q_VER_vs_LEC_telemetry.png)
 
 ![Speed Trace](outputs/2024_Bahrain_Q_VER_vs_LEC_speed.png)
-
 ---
 
 ## Understanding the Code — Key Concepts
