@@ -14,7 +14,16 @@ from the official F1 timing feed via the FastF1 library and generates:
 1. **Head-to-head telemetry panel** — 4-channel comparison (speed / throttle / brake / gear) aligned by distance
 2. **Speed trace with delta shading** — visual fingerprint of where each driver is faster
 3. **Tyre degradation model** — lap time vs tyre age with linear degradation rate (ms/lap) — Race sessions only
+## Sample Outputs
 
+### Telemetry Comparison
+![Telemetry](outputs/2021_Abu Dhabi_R_HAM_vs_VER_telemetry.png)
+
+### Speed Trace
+![Speed](outputs/2021_Abu Dhabi_R_HAM_vs_VER_speed.png)
+
+### Tyre Degradation
+![Tyre Deg](outputs/2021_Abu Dhabi_R_HAM_vs_VER_tyredeg.png)
 ---
 ## Why I Built This
 
