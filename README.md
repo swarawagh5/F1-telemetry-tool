@@ -1,6 +1,6 @@
 # 🏎️ F1 Telemetry Analysis Tool
 
-**Built by:** Swara | Onyx Racing Formula Student  
+**Built by:** Created by Swara Wagh — Aerospace Engineering Student | Motorsport Data & Performance Analysis  
 **Stack:** Python · FastF1 · Matplotlib · Pandas · NumPy  
 **Purpose:** Corner-by-corner telemetry comparison between F1 drivers using real official data.
 
@@ -14,6 +14,11 @@ from the official F1 timing feed via the FastF1 library and generates:
 1. **Head-to-head telemetry panel** — 4-channel comparison (speed / throttle / brake / gear) aligned by distance
 2. **Speed trace with delta shading** — visual fingerprint of where each driver is faster
 3. **Tyre degradation model** — lap time vs tyre age with linear degradation rate (ms/lap) — Race sessions only
+
+---
+## Why I Built This
+
+As an aerospace engineering student aiming for a career in motorsport engineering, I built this project to understand how race engineers interpret telemetry, compare driver performance, and make data-driven setup decisions using real Formula 1 timing data.
 
 ---
 
@@ -72,6 +77,12 @@ All plots are saved to `outputs/` automatically:
 | `{YEAR}_{GP}_{SESSION}_{D1}_vs_{D2}_speed.png` | Speed trace with delta shading |
 | `{YEAR}_{GP}_R_{D1}_vs_{D2}_tyredeg.png` | Tyre degradation (race only) |
 
+## Sample Output
+
+![Telemetry Comparison](outputs/2024_Bahrain_Q_VER_vs_LEC_telemetry.png)
+
+![Speed Trace](outputs/2024_Bahrain_Q_VER_vs_LEC_speed.png)
+
 ---
 
 ## Understanding the Code — Key Concepts
@@ -105,46 +116,6 @@ Aligning by **distance** means `Speed at 1200m` is always Turn 4 for both driver
 We use `np.polyfit(x, y, 1)` — this fits a straight line through the 
 lap time vs tyre life data points. The slope of that line = degradation rate.
 Example: slope of 0.08 = lap time increases by ~80ms per lap of tyre wear.
-
----
-
-## Making It Your Own (How to Differentiate)
-
-These extensions will make this project **unique on your CV**:
-
-### Extension 1 — Formula Student Mode
-Import your own team's CAN bus data (from the car's data logger) and 
-plot the same channels. Now the tool works on real data you generated yourself.
-
-### Extension 2 — Undercut Window Calculator
-```python
-# Pseudo-code
-tyre_deg_rate = slope_from_polyfit          # seconds lost per lap
-time_in_pits  = 22.5                         # average pit stop time (seconds)
-undercut_window = time_in_pits / tyre_deg_rate
-print(f"Undercut works if gap is under {undercut_window:.1f} laps of tyre deg")
-```
-
-### Extension 3 — Track Evolution
-Plot lap time improvement over a qualifying session. Each driver should 
-get faster as rubber goes down — unusual patterns reveal setup changes.
-
-### Extension 4 — Interactive Dashboard (Project Layer 2)
-Wrap this in a Streamlit or Dash web app so you can change drivers 
-from a dropdown without touching code.
-
----
-
-## CV Framing
-
-**Project title:** F1 Telemetry Analysis Tool  
-**One-liner:** Engineered a Python tool using official F1 timing data to perform lap-by-lap telemetry comparison and tyre degradation modelling across driver stints.  
-**Tech keywords:** Python, FastF1, Pandas, NumPy, Matplotlib, data analysis, motorsport engineering
-
-**Where to post:**
-- GitHub (primary — link this in your CV)
-- LinkedIn (post a screenshot of the speed trace plot, tag it #Formula1 #DataScience)
-- Kaggle (upload as a notebook for community visibility)
 
 ---
 
